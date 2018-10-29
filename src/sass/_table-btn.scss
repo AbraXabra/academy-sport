@@ -1,0 +1,77 @@
+// table-btn
+.table-btns {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    margin-top: 4rem;
+
+    
+
+
+    &--blue {
+        color: $color-btn-txt-1;
+        background-color: $color-blue;
+        padding: 1.3rem 4rem;
+        border-radius: 50px;
+        font-size: 1.4rem;
+        font-family: $m-500;
+        text-transform: uppercase;
+        transition: all .5s;
+
+        &:hover {
+            background-color: $color-btn-hover;
+        }
+
+    }
+
+    &--white {
+        color: $color-btn-txt-2;
+        padding: 1.3rem 4rem;
+        border-radius: 50px;
+        border: 1px solid $color-line;
+        font-size: 1.4rem;
+        font-family: $m-500;
+        text-transform: uppercase;
+        transition: all .5s;
+        background-color: #fff;
+
+        &:hover {
+            border: 1px solid $color-blue;
+        }
+
+        &:active {
+            background-color: $color-blue;
+            color: #fff;
+        }
+    }
+
+    .table-btn {
+        margin-right: 2rem;
+        
+        @include r($sm) {
+            margin-right: 0;
+            margin-bottom: 2rem;
+        }
+    }
+
+    .table-btn:last-child {
+        margin-right: 0;
+    }
+}
+
+.hero-btn {
+    padding: 1.3rem;
+    margin-top: 0;
+}
+
+.pass-acc {
+    justify-content: center;
+}
+
+
+.table-bt {
+    @include r($sm) {
+        flex-direction: column;
+        width: 100%;
+    }
+}

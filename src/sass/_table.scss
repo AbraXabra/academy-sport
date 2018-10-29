@@ -1,0 +1,79 @@
+// table
+.wrapper {
+    margin: 0 auto;
+    margin-top: 7rem;
+    width: 100%;
+
+    @include r($sm) {
+        overflow-x: scroll;
+    }
+}
+
+.table {
+    width: 100%;
+    display: table;
+}
+
+.row {
+    display: table-row;
+    background: #fff;
+    font-family: $m-100;
+    font-size: 1.4rem;
+    text-align: center;
+
+
+
+}
+
+
+.header-tb {
+    background: $color-gray;
+    font-family: $m-300;
+    text-transform: uppercase;
+    font-size: 1.4rem;
+    padding: 1rem 3rem;
+    color: $color-table-hero;
+
+
+}
+
+.cell {
+    padding: 6px 12px;
+    display: table-cell;
+    border-bottom: 1px solid $color-line;
+    border-top: 1px solid $color-line;
+    border-right: 1px solid $color-line;
+    border-left: 1px solid $color-line;
+    color: $color-table-hero;
+
+    &:nth-child(1n) {
+        border-top: none;
+        border-left: none;
+        border-right: 1px solid $color-line;
+    }
+
+    &:nth-child(1) {
+        border-left: 1px solid $color-line;
+        border-right: 1px solid $color-line;
+    }
+
+}
+
+.table > .header-tb > .cell {
+    &:nth-child(1n) {
+        border-top: 1px solid $color-line;
+        border-right: 1px solid $color-line;
+    }
+}
+
+.header-tb {
+    border: 1px solid $color-line;
+}
+
+.vs-collapse .vs-collapse-item {
+    border-bottom: none;
+}
+
+.vs-collapse {
+    padding: 0;
+}

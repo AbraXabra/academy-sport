@@ -1,0 +1,565 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Index page</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#fff" />
+    <meta name="format-detection" content="telephone=no" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/vuesax/dist/vuesax.css" rel="stylesheet" />
+    <link rel="stylesheet" media="all" href="css/app.css" />
+  </head>
+  <body>
+    <!-- BEGIN content -->
+    <div class="out laine-bg" id="wrap">
+      <!-- <div class="laine-bg__left"></div> -->
+      <!-- START header -->
+      <header class="header">
+        <div class="header__top-line"></div>
+        <div class="container header-container">
+          <a href="/page.html" class="header__logo">
+            <img src="./img/logo.svg" alt="" />
+          </a>
+        </div>
+      </header>
+      <!-- END header -->
+      <!-- START hero -->
+      <div class="container hero-container">
+        <div class="hero">
+          <div class="hero__title">КАБИНЕТ ПАРТНЕРА</div>
+          <form class="hero__search">
+            <input type="text" class="hero__search--input" placeholder="Попробуйте найти..." />
+            <button type="button" class="hero__search--btn">
+              <i class="material-icons icon-search"> search </i>
+            </button>
+          </form>
+        </div>
+      </div>
+      <!-- END hero -->
+      <!-- START mobile-menu -->
+      <template lang="html">
+        <div id="parentx">
+          <!-- START title mobile -->
+          <div class="main-title-mobile">
+            <div class="main-title-mobile__title"> ОБЩАЯ СТАТИСТИКА </div>
+            <div class="main-title-mobile__btns">
+              <span @click="active=!active" class="main-title-mobile__icon menu-mob">
+                <img src="./img/icons/icon-menu-mob.png" />
+              </span>
+              <div class="form-search-mobile">
+                <div class="form-search-mobile">
+                  <input v-show="activeSearch" type="text" class="hero__search--input main-title-mobile__btns--input" placeholder="Попробуйте найти..." />
+                  <span @click="activeSearch=!activeSearch" class="main-title-mobile__icon search-mob">
+                    <img src="./img/icons/icon-search-mob.png" />
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- END title mobile -->
+          <vs-sidebar parent="body" color="primary" class="sidebarx" spacer v-model="active">
+            <span @click="active=!active" class="close-sidebar-menu">
+              <i class="material-icons"> close </i>
+            </span>
+            <div class="header-sidebar" slot="header"> МЕНЮ </div>
+            <vs-sidebar-item href="#" index="1">
+              <img class="icon-sidebar" src="./img/icons/icon-1.svg" /> Общая статистика </vs-sidebar-item>
+            <vs-sidebar-item href="#" index="2">
+              <img class="icon-sidebar" src="./img/icons/icon-2.svg" /> Спортсмены </vs-sidebar-item>
+            <vs-sidebar-item href="#" index="3">
+              <img class="icon-sidebar" src="./img/icons/icon-3.svg" /> Пригласить друзей </vs-sidebar-item>
+            <vs-sidebar-item href="#" index="4">
+              <img class="icon-sidebar" src="./img/icons/icon-4.svg" /> Аккаунт </vs-sidebar-item>
+            <a href="#" class="sidebar-mob-btn">Выход</a>
+          </vs-sidebar>
+        </div>
+      </template>
+      <!-- END mobile-menu -->
+      <!-- START content -->
+      <div class="container">
+        <div class="grid-container">
+          <!-- START sidebar -->
+          <div class="sidebar">
+            <div class="sidebar__hero">
+              <div class="sidebar__hero--ava">AC</div>
+              <div class="sidebar__hero--hello">Здравствуйте,</div>
+              <div class="sidebar__hero--user">Александр Савельев</div>
+            </div>
+            <div class="sidebar__menu">
+              <a href="#" class="sidebar__menu--link">
+                <img class="icon-sidebar" src="./img/icons/icon-1.svg" /> Общая статистика </a>
+              <a href="#" class="sidebar__menu--link">
+                <img class="icon-sidebar" src="./img/icons/icon-2.svg" /> Спортсмены </a>
+              <a href="#" class="sidebar__menu--link">
+                <img class="icon-sidebar" src="./img/icons/icon-3.svg" /> Пригласить друзей </a>
+              <a href="#" class="sidebar__menu--link">
+                <img class="icon-sidebar" src="./img/icons/icon-4.svg" /> Аккаунт </a>
+            </div>
+            <a href="#" class="sidebar__btn-big">Выход</a>
+          </div>
+          <!-- END sidebar -->
+          <div class="main">
+            <!-- START main-title -->
+            <div class="main-title"> ОБЩАЯ СТАТИСТИКА </div>
+            <!-- END main-title -->
+            <!-- /////////////////////////////////////////////// -->
+            <template lang="html">
+              <div>
+                <vs-collapse accordion>
+                  <vs-collapse-item>
+                    <div slot="header">
+                      <!-- START table-hero -->
+                      <div class="table-hero">
+                        <img class="icon-notes" src="./img/icons/note.svg" />
+                        <span class="table-hero__title">ВАШ БАЛАНС (в рублях)</span>
+                      </div>
+                      <!-- END table-hero -->
+                    </div>
+                    <!-- START table -->
+                    <div class="wrapper">
+                      <div class="table">
+                        <div class="row header-tb">
+                          <div class="cell" style="text-align: left; font-weight: 900; font-size: 1.6rem;"> ПАРАМЕТРЫ </div>
+                          <div class="cell"> ВСЕГО </div>
+                          <div class="cell"> СЕГОДНЯ </div>
+                          <div class="cell"> ЗА НЕДЕЛЮ </div>
+                          <div class="cell"> ЗА МЕСЯЦ </div>
+                          <div class="cell"> ЗА ГОД </div>
+                          <div class="cell"> ЗА ПЕРИОД </div>
+                        </div>
+                        <!-- START row -->
+                        <div class="row">
+                          <div class="cell" style="text-align: left;"> Поступило на счет </div>
+                          <div class="cell"> 50 000 </div>
+                          <div class="cell"> 1000 </div>
+                          <div class="cell"> 1000 </div>
+                          <div class="cell"> 15000 </div>
+                          <div class="cell"> 20000 </div>
+                          <div class="cell"> 34000 </div>
+                        </div>
+                        <!-- END row -->
+                        <!-- START row -->
+                        <div class="row">
+                          <div class="cell" style="text-align: left;"> Выведено со счета </div>
+                          <div class="cell"> 50 000 </div>
+                          <div class="cell"> 1000 </div>
+                          <div class="cell"> 1000 </div>
+                          <div class="cell"> 15000 </div>
+                          <div class="cell"> 20000 </div>
+                          <div class="cell"> 34000 </div>
+                        </div>
+                        <!-- END row -->
+                      </div>
+                    </div>
+                    <!-- END table -->
+                    <!-- START table-btn -->
+                    <div class="table-btns table-bt">
+                      <button class="table-btn table-btns--blue">ВЫВЕСТИ</button>
+                      <button class="table-btn table-btns--white">ВЫБРАТЬ ПЕРИОД</button>
+                    </div>
+                    <!-- END table-btn -->
+                  </vs-collapse-item>
+                  <!-- /////////////////////////////////////////////// -->
+                  <vs-collapse-item>
+                    <div slot="header">
+                      <!-- START table-hero -->
+                      <div class="table-hero">
+                        <img class="icon-notes" src="./img/icons/note.svg" />
+                        <span class="table-hero__title">КОЛИЧЕСТВО ПОКУПОК (в чел.)</span>
+                      </div>
+                      <!-- END table-hero -->
+                    </div>
+                    <!-- START table -->
+                    <div class="wrapper">
+                      <div class="table">
+                        <div class="row header-tb">
+                          <div class="cell" style="text-align: left; font-weight: 900; font-size: 1.6rem;"> ПАРАМЕТРЫ </div>
+                          <div class="cell"> ВСЕГО </div>
+                          <div class="cell"> сегодня </div>
+                          <div class="cell"> за неделю </div>
+                          <div class="cell"> за месяц </div>
+                          <div class="cell"> за год </div>
+                          <div class="cell"> за период </div>
+                        </div>
+                        <!-- START row -->
+                        <div class="row">
+                          <div class="cell" style="text-align: left;"> Лыжные гонки </div>
+                          <div class="cell"> 108 </div>
+                          <div class="cell"> 0 </div>
+                          <div class="cell"> 3 </div>
+                          <div class="cell"> 17 </div>
+                          <div class="cell"> 32 </div>
+                          <div class="cell"> 12 </div>
+                        </div>
+                        <!-- END row -->
+                        <!-- START row -->
+                        <div class="row">
+                          <div class="cell" style="text-align: left;"> Биатлон </div>
+                          <div class="cell"> 108 </div>
+                          <div class="cell"> 0 </div>
+                          <div class="cell"> 3 </div>
+                          <div class="cell"> 17 </div>
+                          <div class="cell"> 32 </div>
+                          <div class="cell"> 12 </div>
+                        </div>
+                        <!-- END row -->
+                        <!-- START row -->
+                        <div class="row">
+                          <div class="cell" style="text-align: left;"> Легкая атлетика </div>
+                          <div class="cell"> 108 </div>
+                          <div class="cell"> 0 </div>
+                          <div class="cell"> 3 </div>
+                          <div class="cell"> 17 </div>
+                          <div class="cell"> 32 </div>
+                          <div class="cell"> 12 </div>
+                        </div>
+                        <!-- END row -->
+                        <!-- START row -->
+                        <div class="row">
+                          <div class="cell" style="text-align: left;"> Гонки героев </div>
+                          <div class="cell"> 108 </div>
+                          <div class="cell"> 0 </div>
+                          <div class="cell"> 3 </div>
+                          <div class="cell"> 17 </div>
+                          <div class="cell"> 32 </div>
+                          <div class="cell"> 12 </div>
+                        </div>
+                        <!-- END row -->
+                        <!-- START row -->
+                        <div class="row">
+                          <div class="cell" style="text-align: left;"> Функциональная тренировка </div>
+                          <div class="cell"> 108 </div>
+                          <div class="cell"> 0 </div>
+                          <div class="cell"> 3 </div>
+                          <div class="cell"> 17 </div>
+                          <div class="cell"> 32 </div>
+                          <div class="cell"> 12 </div>
+                        </div>
+                        <!-- END row -->
+                      </div>
+                    </div>
+                    <!-- END table -->
+                    <!-- START table-btn -->
+                    <div class="table-btns table-bt">
+                      <button class="table-btn table-btns--white">ВЫБРАТЬ ПЕРИОД</button>
+                    </div>
+                    <!-- END table-btn -->
+                  </vs-collapse-item>
+                  <!-- /////////////////////////////////////////////// -->
+                  <vs-collapse-item>
+                    <div slot="header">
+                      <!-- START table-hero -->
+                      <div class="table-hero">
+                        <img class="icon-notes" src="./img/icons/note.svg" />
+                        <span class="table-hero__title">КОЛИЧЕСТВО ПОКУПОК НА ЧЕЛОВЕКА</span>
+                      </div>
+                      <!-- END table-hero -->
+                    </div>
+                    <!-- START table -->
+                    <div class="wrapper">
+                      <div class="table">
+                        <div class="row header-tb">
+                          <div class="cell" style="text-align: left; font-weight: 900; font-size: 1.6rem;"> ПАРАМЕТРЫ </div>
+                          <div class="cell"> ВСЕГО </div>
+                          <div class="cell"> сегодня </div>
+                          <div class="cell"> за неделю </div>
+                          <div class="cell"> за месяц </div>
+                          <div class="cell"> за год </div>
+                          <div class="cell"> за период </div>
+                        </div>
+                        <!-- START row -->
+                        <div class="row">
+                          <div class="cell" style="text-align: left;"> Лыжные гонки </div>
+                          <div class="cell"> 108 </div>
+                          <div class="cell"> 0 </div>
+                          <div class="cell"> 3 </div>
+                          <div class="cell"> 17 </div>
+                          <div class="cell"> 32 </div>
+                          <div class="cell"> 12 </div>
+                        </div>
+                        <!-- END row -->
+                        <!-- START row -->
+                        <div class="row">
+                          <div class="cell" style="text-align: left;"> Биатлон </div>
+                          <div class="cell"> 108 </div>
+                          <div class="cell"> 0 </div>
+                          <div class="cell"> 3 </div>
+                          <div class="cell"> 17 </div>
+                          <div class="cell"> 32 </div>
+                          <div class="cell"> 12 </div>
+                        </div>
+                        <!-- END row -->
+                        <!-- START row -->
+                        <div class="row">
+                          <div class="cell" style="text-align: left;"> Легкая атлетика </div>
+                          <div class="cell"> 108 </div>
+                          <div class="cell"> 0 </div>
+                          <div class="cell"> 3 </div>
+                          <div class="cell"> 17 </div>
+                          <div class="cell"> 32 </div>
+                          <div class="cell"> 12 </div>
+                        </div>
+                        <!-- END row -->
+                        <!-- START row -->
+                        <div class="row">
+                          <div class="cell" style="text-align: left;"> Гонки героев </div>
+                          <div class="cell"> 108 </div>
+                          <div class="cell"> 0 </div>
+                          <div class="cell"> 3 </div>
+                          <div class="cell"> 17 </div>
+                          <div class="cell"> 32 </div>
+                          <div class="cell"> 12 </div>
+                        </div>
+                        <!-- END row -->
+                        <!-- START row -->
+                        <div class="row">
+                          <div class="cell" style="text-align: left;"> Функциональная тренировка </div>
+                          <div class="cell"> 108 </div>
+                          <div class="cell"> 0 </div>
+                          <div class="cell"> 3 </div>
+                          <div class="cell"> 17 </div>
+                          <div class="cell"> 32 </div>
+                          <div class="cell"> 12 </div>
+                        </div>
+                        <!-- END row -->
+                      </div>
+                    </div>
+                    <!-- END table -->
+                    <!-- START table-btn -->
+                    <div class="table-btns table-bt">
+                      <button class="table-btn table-btns--white">ВЫБРАТЬ количество</button>
+                    </div>
+                    <!-- END table-btn -->
+                  </vs-collapse-item>
+                  <!-- /////////////////////////////////////////////// -->
+                  <vs-collapse-item>
+                    <div slot="header">
+                      <!-- START table-hero -->
+                      <div class="table-hero">
+                        <img class="icon-notes" src="./img/icons/note.svg" />
+                        <span class="table-hero__title">КОЛИЧЕСТВО ПОКУПОК ПО ТАРИФАМ</span>
+                      </div>
+                      <!-- END table-hero -->
+                    </div>
+                    <!-- START table -->
+                    <div class="wrapper">
+                      <div class="table">
+                        <div class="row header-tb">
+                          <div class="cell" style="text-align: left; font-weight: 900; font-size: 1.6rem;"> ПАРАМЕТРЫ </div>
+                          <div class="cell"> ВСЕГО </div>
+                          <div class="cell"> сегодня </div>
+                          <div class="cell"> за неделю </div>
+                          <div class="cell"> за месяц </div>
+                          <div class="cell"> за год </div>
+                          <div class="cell"> за период </div>
+                        </div>
+                        <!-- START row -->
+                        <div class="row">
+                          <div class="cell" style="text-align: left;"> Лыжные гонки </div>
+                          <div class="cell"> 108 </div>
+                          <div class="cell"> 0 </div>
+                          <div class="cell"> 3 </div>
+                          <div class="cell"> 17 </div>
+                          <div class="cell"> 32 </div>
+                          <div class="cell"> 12 </div>
+                        </div>
+                        <!-- END row -->
+                        <!-- START row -->
+                        <div class="row">
+                          <div class="cell" style="text-align: left;"> Биатлон </div>
+                          <div class="cell"> 108 </div>
+                          <div class="cell"> 0 </div>
+                          <div class="cell"> 3 </div>
+                          <div class="cell"> 17 </div>
+                          <div class="cell"> 32 </div>
+                          <div class="cell"> 12 </div>
+                        </div>
+                        <!-- END row -->
+                        <!-- START row -->
+                        <div class="row">
+                          <div class="cell" style="text-align: left;"> Легкая атлетика </div>
+                          <div class="cell"> 108 </div>
+                          <div class="cell"> 0 </div>
+                          <div class="cell"> 3 </div>
+                          <div class="cell"> 17 </div>
+                          <div class="cell"> 32 </div>
+                          <div class="cell"> 12 </div>
+                        </div>
+                        <!-- END row -->
+                        <!-- START row -->
+                        <div class="row">
+                          <div class="cell" style="text-align: left;"> Гонки героев </div>
+                          <div class="cell"> 108 </div>
+                          <div class="cell"> 0 </div>
+                          <div class="cell"> 3 </div>
+                          <div class="cell"> 17 </div>
+                          <div class="cell"> 32 </div>
+                          <div class="cell"> 12 </div>
+                        </div>
+                        <!-- END row -->
+                        <!-- START row -->
+                        <div class="row">
+                          <div class="cell" style="text-align: left;"> Функциональная тренировка </div>
+                          <div class="cell"> 108 </div>
+                          <div class="cell"> 0 </div>
+                          <div class="cell"> 3 </div>
+                          <div class="cell"> 17 </div>
+                          <div class="cell"> 32 </div>
+                          <div class="cell"> 12 </div>
+                        </div>
+                        <!-- END row -->
+                      </div>
+                    </div>
+                    <!-- END table -->
+                    <!-- START table-btn -->
+                    <div class="table-btns table-bt">
+                      <button class="table-btn table-btns--blue">за день</button>
+                      <button class="table-btn table-btns--white">за месяц</button>
+                      <button class="table-btn table-btns--white">за год</button>
+                      <button class="table-btn table-btns--white">все время</button>
+                    </div>
+                    <!-- END table-btn -->
+                  </vs-collapse-item>
+                  <!-- /////////////////////////////////////////////// -->
+                  <vs-collapse-item>
+                    <div slot="header">
+                      <!-- START table-hero -->
+                      <div class="table-hero">
+                        <img class="icon-notes" src="./img/icons/note.svg" />
+                        <span class="table-hero__title">КОЛИЧЕСТВО ПЕРЕХОДОВ НА САЙТ</span>
+                      </div>
+                      <!-- END table-hero -->
+                    </div>
+                    <!-- START table -->
+                    <div class="wrapper">
+                      <div class="table">
+                        <div class="row header-tb">
+                          <div class="cell" style="text-align: left; font-weight: 900; font-size: 1.6rem;"> ПАРАМЕТРЫ </div>
+                          <div class="cell"> ВСЕГО </div>
+                          <div class="cell"> сегодня </div>
+                          <div class="cell"> за неделю </div>
+                          <div class="cell"> за месяц </div>
+                          <div class="cell"> за год </div>
+                          <div class="cell"> за период </div>
+                        </div>
+                        <!-- START row -->
+                        <div class="row">
+                          <div class="cell" style="text-align: left;"> По ссылке </div>
+                          <div class="cell"> 50 000 </div>
+                          <div class="cell"> 1000 </div>
+                          <div class="cell"> 1000 </div>
+                          <div class="cell"> 15000 </div>
+                          <div class="cell"> 20000 </div>
+                          <div class="cell"> 34000 </div>
+                        </div>
+                        <!-- END row -->
+                        <!-- START row -->
+                        <div class="row">
+                          <div class="cell" style="text-align: left;"> Из писем </div>
+                          <div class="cell"> 50 000 </div>
+                          <div class="cell"> 1000 </div>
+                          <div class="cell"> 1000 </div>
+                          <div class="cell"> 15000 </div>
+                          <div class="cell"> 20000 </div>
+                          <div class="cell"> 34000 </div>
+                        </div>
+                        <!-- END row -->
+                      </div>
+                    </div>
+                    <!-- END table -->
+                    <!-- START table-btn -->
+                    <div class="table-btns table-bt">
+                      <button class="table-btn table-btns--white">ВЫБРАТЬ ПЕРИОД</button>
+                    </div>
+                    <!-- END table-btn -->
+                  </vs-collapse-item>
+                  <!-- /////////////////////////////////////////////// -->
+                  <vs-collapse-item>
+                    <div slot="header">
+                      <!-- START table-hero -->
+                      <div class="table-hero">
+                        <img class="icon-notes" src="./img/icons/note.svg" />
+                        <span class="table-hero__title">ВЫ ПРИГЛАСИЛИ</span>
+                      </div>
+                      <!-- END table-hero -->
+                    </div>
+                    <!-- START table -->
+                    <div class="wrapper">
+                      <div class="table">
+                        <div class="row header-tb">
+                          <div class="cell" style="text-align: left; font-weight: 900; font-size: 1.6rem;"> ПАРАМЕТРЫ </div>
+                          <div class="cell"> ВСЕГО </div>
+                          <div class="cell"> сегодня </div>
+                          <div class="cell"> за неделю </div>
+                          <div class="cell"> за месяц </div>
+                          <div class="cell"> за год </div>
+                          <div class="cell"> за период </div>
+                        </div>
+                        <!-- START row -->
+                        <div class="row">
+                          <div class="cell" style="text-align: left;"> Опубликовали ссылку </div>
+                          <div class="cell"> 50 000 </div>
+                          <div class="cell"> 1000 </div>
+                          <div class="cell"> 1000 </div>
+                          <div class="cell"> 15000 </div>
+                          <div class="cell"> 20000 </div>
+                          <div class="cell"> 34000 </div>
+                        </div>
+                        <!-- END row -->
+                        <!-- START row -->
+                        <div class="row">
+                          <div class="cell" style="text-align: left;"> Разослали писем </div>
+                          <div class="cell"> 50 000 </div>
+                          <div class="cell"> 0 </div>
+                          <div class="cell"> 2000 </div>
+                          <div class="cell"> 15000 </div>
+                          <div class="cell"> 20000 </div>
+                          <div class="cell"> 34000 </div>
+                        </div>
+                        <!-- END row -->
+                      </div>
+                    </div>
+                    <!-- END table -->
+                    <!-- START table-btn -->
+                    <div class="table-btns table-bt">
+                      <button class="table-btn table-btns--blue">ПРИГЛАСИТЬ</button>
+                      <button class="table-btn table-btns--white">ВЫБРАТЬ ПЕРИОД</button>
+                    </div>
+                    <!-- END table-btn -->
+                  </vs-collapse-item>
+                </vs-collapse>
+              </div>
+            </template>
+            <!-- /////////////////////////////////////////////// -->
+            <!-- <span class="lain-end"></span> -->
+          </div>
+        </div>
+      </div>
+      <!-- END content -->
+      <!-- START footer-hero -->
+      <div class="footer-hero">
+        <img src="./img/mountains.png" alt="">
+        <div class="footer-hero__shadow"></div>
+      </div>
+      <!-- END footer-hero -->
+      <!-- START footer -->
+      <footer class="footer">
+        <div class="container">
+          <div class="footer__nav">
+            <a href="#" class="footer__nav--link">Главная</a>
+            <a href="#" class="footer__nav--link">Правила и условия</a>
+            <a href="#" class="footer__nav--link">Конфиденциальность</a>
+          </div>
+        </div>
+      </footer>
+      <!-- END footer -->
+      <!-- <div class="laine-bg__right"></div> -->
+    </div>
+    <!-- END content -->
+    <!-- BEGIN scripts -->
+    <script type="text/javascript" src="js/app.js"></script>
+    <!-- END scripts -->
+  </body>
+</html>
