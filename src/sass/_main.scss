@@ -48,7 +48,7 @@
     }
 
     .lain-end {
-        border: 1px solid $color-line;
+        border: 0.5px solid $color-line;
         width: 100%;
         display: block;
         margin-top: 3rem;
@@ -59,3 +59,31 @@
     }
 
 }
+
+
+.lain-left {
+    position: absolute;
+    width: 163px;
+    height: 163px;
+    left: 0;
+    top: 800px;
+    z-index: 10;
+
+    @include r($md) {
+        display: none;
+    }
+}
+
+.lain-right {
+    position: absolute;
+    width: 163px;
+    height: 163px;
+    right: 0;
+    top: 270px;
+    z-index: 1;
+
+    @include r($md) {
+        display: none;
+    }
+}
+

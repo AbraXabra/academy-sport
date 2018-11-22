@@ -81,3 +81,18 @@ a {
         display: none;
     }
 }
+
+
+// not
+@mixin not-r($nam) {
+    &:not(:last-child) {
+        margin-right: $nam;
+    }
+}
+
+// not
+@mixin not-l($nam) {
+    &:not(:last-child) {
+        margin-left: $nam;
+    }
+}
